@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webhubs-deploy
+  labels: 
+    name: webhubs
+    app: website
+spec: 
+  replicas: 3
+  selector:
+    matchLabels:
+      name: webhubs-pod
+      app: website
+  template:
+    metadata:
+      name: webhubs-pod
+      labels: 
+        name: webhubs-pod
+        app: website
+    spec:
+      containers:
+        - name: webhubs
+          image: teni96/webhubs
+          ports:
+            - containerPort: 80
