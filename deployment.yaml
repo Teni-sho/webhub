@@ -20,6 +20,6 @@ spec:
     spec:
       containers:
         - name: webhubs
-          image: teni96/webhubs
+          image: teni96/webhubs:v1
           ports:
             - containerPort: 80
